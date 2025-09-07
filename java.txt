@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HTML + JavaScript + C++ Style</title>
+</head>
+<body>
+    <h2>Enter a number to double it:</h2>
+    <input type="number" id="numberInput" placeholder="Enter number" />
+    <button onclick="processNumber()">Double!</button>
+    <p id="result">Result will appear here</p>
+
+    <script>
+        // C++ style function written in JavaScript
+        function doubleNumber(int n) {
+            // simulate C++ logic
+            let result = n * 2;
+            return result;
+        }
+
+        function processNumber() {
+            let input = document.getElementById("numberInput").value;
+            let num = parseInt(input);
+
+            if(isNaN(num)) {
+                document.getElementById("result").textContent = "Please enter a valid number.";
+                return;
+            }
+
+            let output = doubleNumber(num); // calling C++ like function
+            document.getElementById("result").textContent = "The doubled number is: " + output;
+        }
+    </script>
+</body>
+</html>
